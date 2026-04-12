@@ -1,0 +1,57 @@
+{
+  "name": "@phoenixaihub/anti-distillation-detection",
+  "version": "0.1.0",
+  "description": "Watermarking and fingerprinting middleware to detect unauthorized distillation of LLM API outputs",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "bin": {
+    "add-detect": "dist/cli.js"
+  },
+  "exports": {
+    ".": "./dist/index.js",
+    "./express": "./dist/middleware/express.js",
+    "./fastify": "./dist/middleware/fastify.js",
+    "./detect": "./dist/detection/index.js",
+    "./dashboard": "./dist/dashboard/index.js"
+  },
+  "files": [
+    "dist",
+    "dashboard"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "test": "vitest run",
+    "lint": "eslint src/",
+    "prepublishOnly": "npm run build"
+  },
+  "keywords": [
+    "llm",
+    "watermarking",
+    "distillation",
+    "detection",
+    "ai-safety",
+    "fingerprinting",
+    "steganography"
+  ],
+  "author": "Phoenix AI Hub",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/phoenix-assistant/anti-distillation-detection"
+  },
+  "devDependencies": {
+    "@types/express": "^4.17.21",
+    "@types/node": "^20.11.0",
+    "eslint": "^8.56.0",
+    "typescript": "^5.3.3",
+    "vitest": "^1.2.0"
+  },
+  "peerDependencies": {
+    "express": "^4.0.0 || ^5.0.0",
+    "fastify": "^4.0.0 || ^5.0.0"
+  },
+  "peerDependenciesMeta": {
+    "express": { "optional": true },
+    "fastify": { "optional": true }
+  }
+}
